@@ -12,7 +12,7 @@ Tesis operasyonel verilerini (elektrik tüketimi, ısınma tipi, üretim hattı 
 - Tahmini verimlilik kazanımı ve yatırım geri dönüş süresi hesaplar
 - Takip soruları sormanıza olanak tanır
 
-## 🛠️ Teknolojiler
+## 🛠️ Teknolojiler 
 
 - **Python 3.11+**
 - **Streamlit** — web arayüzü
