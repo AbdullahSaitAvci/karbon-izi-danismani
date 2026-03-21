@@ -141,3 +141,54 @@ def tum_alanlari_dogrula(
         ))
 
     return hatalar
+    
+
+# -----------------------------------------------
+# GÜVENLİK — Prompt Injection Kontrolü
+# -----------------------------------------------
+
+# Bilinen prompt injection kalıpları (küçük harfle)
+# Bu liste %100 koruma sağlamaz ama yaygın saldırıları engeller.
+_YASAK_KALIPLAR = [
+    "ignore all",
+    "ignore previous",
+    "ignore above",
+    "disregard",
+    "you are now",
+    "new instructions",
+    "forget everything",
+    "forget your",
+    "system prompt",
+    "act as",
+    "pretend to be",
+    "önceki talimatları",
+    "talimatları unut",
+    "rolünü değiştir",
+    "sen artık",
+    "tüm kuralları unut",
+]
+
+
+def prompt_injection_kontrolu(metin: str) -> bool:
+    """
+    Kullanıcı girdisinde bilinen prompt injection kalıplarını arar.
+
+    Neden önemli?
+    ─────────────
+    Kullanıcı tesis adı veya takip sorusuna "Ignore all previous
+    instructions" gibi bir metin yazarsa, Claude sistem promptunu
+    görmezden gelip uygulamanın amacı dışında yanıt üretebilir.
+    Bu fonksiyon en yaygın kalıpları yakalayarak bunu engeller.
+
+    Sınırlamalar:
+    - Sadece bilinen kalıpları yakalar, yaratıcı saldırıları engellemez.
+    - İkinci katman (XML sarmalama) ile birlikte kullanılmalıdır.
+
+    Args:
+        metin: Kontrol edilecek kullanıcı girdisi.
+
+    Returns:
+        bool: True ise şüpheli içerik tespit edildi, False ise temiz.
+    """
+    metin_kucuk = metin.lower().strip()
+    return any(kalip in metin_kucuk for kalip in _YASAK_KALIPLAR)
