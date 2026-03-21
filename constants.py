@@ -9,27 +9,13 @@
 # Kaynak: IPCC 2006 Kılavuzu, TEİAŞ yıllık raporları
 # -----------------------------------------------
 
-# Türkiye şebeke ortalaması (kg CO₂ / kWh)
 ELEKTRIK_EMISYON_FAKTORU = 0.47
-
-# Doğalgaz emisyon faktörü (kg CO₂ / m³)
 DOGALGAZ_EMISYON_FAKTORU = 2.0
-
-# Kömür emisyon faktörü (kg CO₂ / kg)
 KOMUR_EMISYON_FAKTORU = 2.86
-
-# Fuel-oil emisyon faktörü (kg CO₂ / litre)
 FUELOIL_EMISYON_FAKTORU = 3.15
-
-# Isı pompası — şebeke elektriğiyle çalıştığı için
-# COP (performans katsayısı) ile düzeltilmiş faktör
 ISI_POMPASI_COP = 3.5
-
-# Isınma tipine göre aylık yakıt tüketimi tahmini (birim / kWh ısı)
-# Bu çarpanlar, aylık elektrik tüketiminin %30'u kadar ısı ihtiyacı varsayar
 ISINMA_ENERJI_ORANI = 0.30
 
-# Isınma tipi -> (emisyon_faktoru, birim_adi) eşleştirmesi
 ISINMA_EMISYON_HARITASI = {
     "Doğalgaz": (DOGALGAZ_EMISYON_FAKTORU, "m³"),
     "Kömür": (KOMUR_EMISYON_FAKTORU, "kg"),
@@ -71,38 +57,48 @@ VARDIYA_DUZENLERI = {
 # GİRDİ LİMİTLERİ
 # -----------------------------------------------
 
-# Aylık elektrik tüketimi (kWh)
 ELEKTRIK_MIN = 100
 ELEKTRIK_MAX = 10_000_000
 ELEKTRIK_VARSAYILAN = 50_000
 
-# Üretim hattı sayısı
 URETIM_HATTI_MIN = 1
 URETIM_HATTI_MAX = 100
 URETIM_HATTI_VARSAYILAN = 3
 
-# Otomasyon seviyesi (0-10 arası slider)
 OTOMASYON_MIN = 0
 OTOMASYON_MAX = 10
 OTOMASYON_VARSAYILAN = 3
 
-# Tesis adı maksimum karakter sayısı
 TESIS_ADI_MAX_UZUNLUK = 100
 
 # -----------------------------------------------
 # API AYARLARI
 # -----------------------------------------------
 
-# Anthropic model adı
 CLAUDE_MODEL = "claude-sonnet-4-5"
 
-# İlk analiz için maksimum token sayısı
+# Token limitleri (v2 — optimize edilmiş)
+#
+# Önceki değerler: ANALIZ=2048, TAKIP=1024 → her ikisinde de kesilme oluyordu
+# 4096 bile yetmedi çünkü Claude çok detaylı yazıyordu.
+#
+# Yeni strateji: Sistem promptunu kısalttık ("800 kelime aşma" dedik)
+# + limitleri makul seviyede tuttuk. Claude artık 2048 içinde bitirecek
+# çünkü prompt ona kısa yazmasını söylüyor.
+#
+# Eğer yine kesilirse 3072'ye çıkar, ama prompt optimize olduğu için
+# 2048 yetmeli.
 ANALIZ_MAX_TOKENS = 2048
-
-# Takip soruları için maksimum token sayısı
-TAKIP_MAX_TOKENS = 1024
+TAKIP_MAX_TOKENS = 1536
 
 # -----------------------------------------------
 # KG'DAN TON'A ÇEVİRME
 # -----------------------------------------------
 KG_TO_TON = 1000
+
+# -----------------------------------------------
+# SOHBET GEÇMİŞİ ve TOKEN YÖNETİMİ
+# -----------------------------------------------
+
+MAX_GECMIS_MESAJ = 14
+MAX_TAKIP_SORUSU = 15
