@@ -130,7 +130,7 @@ Bu proje, [YGA](https://yga.org.tr/) ve [UP School](https://upschool.com/) taraf
 **Eğitmenler ve katkıda bulunanlar:**
 - Yağmur Yıldız Parıltı — Yapay Zeka ile Uygulama Geliştirme
 - Hakan Şençiçek & Mehmet Özalp (Schneider Electric) — Otomasyon, Robotik ve PLC
-- Cihan Özel & Şahin Çağlayan (Faraday) — GreenTech
+- Cihan Özel & Şahin Çağlayan (Faradai) — GreenTech
 
 ## 📝 Lisans
 
@@ -139,6 +139,6 @@ Bu proje eğitim amaçlı geliştirilmiştir.
 ## 👤 Geliştirici
 
 **Abdullah Sait Avcı**
-- 🎓 Sakarya Üniversitesi — Bilgisayar Mühendisliği (3. sınıf)
+- 🎓 Sakarya Üniversitesi — Bilgisayar Mühendisliği (3. Sınıf)
 - 🔗 [GitHub](https://github.com/AbdullahSaitAvci)
 - 🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-sait-avci)
