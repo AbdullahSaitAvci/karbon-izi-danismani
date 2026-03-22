@@ -60,6 +60,10 @@ def sidebar_formu_goster() -> Optional[FormVerisi]:
     Returns:
         FormVerisi veya None: Form gönderildiyse veri, gönderilmediyse None.
     """
+    st.sidebar.title("🏭 Karbon İzi Danışmanı")
+    st.sidebar.caption("v1.0 | YGA Future Talent Program")
+    st.sidebar.divider()
+
     st.sidebar.header("🏭 Tesis Bilgileri")
     st.sidebar.caption("Analiz için tesis verilerinizi girin.")
 
@@ -115,6 +119,13 @@ def sidebar_formu_goster() -> Optional[FormVerisi]:
         "🔍 Analiz Et",
         use_container_width=True,
         type="primary",
+    )
+
+    st.sidebar.divider()
+    st.sidebar.caption(
+        "🔒 Verileriniz yalnızca analiz süresince işlenir, kalıcı olarak saklanmaz.\n"
+        "Sayfa yenilendiğinde tüm veriler silinir.\n"
+        "Analiz için Anthropic Claude API kullanılmaktadır."
     )
 
     if analiz_basildi:

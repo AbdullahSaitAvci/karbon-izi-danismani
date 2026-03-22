@@ -14,7 +14,6 @@ from ui.sonuc import (
     chat_gecmisini_goster,
     hosgeldin_mesaji_goster,
 )
-from utils.dogrulama import tum_alanlari_dogrula
 from utils.hesaplama import karbon_izi_hesapla
 from services.claude_service import analiz_istegi_gonder
 from constants import MAX_TAKIP_SORUSU
@@ -264,6 +263,41 @@ def _sonuclari_ve_chati_goster() -> None:
 
 def main() -> None:
     """Ana uygulama akışı: başlık, form, analiz ve sohbet."""
+    # set_page_config üst blokta; burada hafif tema (dark ile uyumlu)
+    st.markdown(
+        """
+        <style>
+        /* Ana içerik genişliği */
+        .main .block-container {
+            max-width: 900px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Sidebar — Streamlit temasına uyumlu, hafif ton farkı */
+        section[data-testid="stSidebar"] {
+            border-right: 1px solid rgba(128, 128, 128, 0.2);
+        }
+
+        /* Metrik kutuları */
+        [data-testid="stMetric"] {
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            border-radius: 10px;
+            padding: 0.65rem 0.85rem;
+            background: rgba(128, 128, 128, 0.04);
+        }
+
+        /* Analiz Et butonu */
+        [data-testid="stSidebar"] [data-testid="baseButton-primary"] {
+            padding: 0.75rem 1.35rem !important;
+            min-height: 2.85rem;
+            font-size: 1.08rem !important;
+            font-weight: 600;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
     _session_state_baslat()
 
     # Başlık — daha sade
@@ -281,8 +315,15 @@ def main() -> None:
     if st.session_state.get("analiz_yapildi"):
         _sonuclari_ve_chati_goster()
     else:
-        hosgeldin_mesaji_goster()
+        hosgeldin_mesaji_goster() 
+
+    st.markdown("---")
+    st.caption(
+        "🏭 Karbon İzi ve Otomasyon Danışmanı | "
+        "YGA Future Talent Program 2026 | "
+        "Geliştirici: Abdullah Sait Avcı"
+    )
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
