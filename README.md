@@ -4,7 +4,11 @@ An AI-powered web application that analyzes factory operational data to calculat
 
 **Built with:** Python · Streamlit · Claude API (Anthropic)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+
+> 🔗 **Live Demo:** [abdullahsaitavci-karbon-izi-danismani.streamlit.app](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+
+---
 
 ## ✨ Key Features
 
@@ -19,9 +23,9 @@ An AI-powered web application that analyzes factory operational data to calculat
 
 | Component | Technology |
 |-----------|-----------|
-| Frontend & Backend | Streamlit |
+| Frontend & Backend | Streamlit 1.55 |
 | LLM | Claude Sonnet 4.5 (Anthropic API) |
-| Language | Python 3.11+ |
+| Language | Python 3.12 |
 | Deployment | Streamlit Community Cloud |
 | Version Control | Git & GitHub |
 
@@ -78,6 +82,8 @@ streamlit run app.py
 
 Fabrika ve tesis operasyonel verilerini analiz ederek karbon ayak izini hesaplayan ve endüstriyel otomasyon (PLC, IoT, SCADA) tabanlı enerji verimliliği tavsiyeleri sunan yapay zeka destekli web uygulaması.
 
+> 🔗 **Canlı Demo:** [abdullahsaitavci-karbon-izi-danismani.streamlit.app](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+
 ## 🎯 Ne Yapıyor?
 
 1. **Veri Girişi:** Kullanıcı sol panelden tesis bilgilerini girer (elektrik tüketimi, ısınma tipi, üretim hattı sayısı, vardiya düzeni, otomasyon seviyesi)
@@ -107,8 +113,8 @@ Uygulama şu bilgileri sunar:
 *Kaynak: IPCC 2006 Kılavuzu, TEİAŞ yıllık raporları*
 
 ### Token Yönetimi
-- İlk analiz: ~1500 token (~3 cent)
-- Takip sorusu: ~1000 token (~2 cent)
+- İlk analiz: ~1500 token (~3 cent/analiz)
+- Takip sorusu: ~1000 token (~2 cent/soru)
 - Sohbet geçmişi kırpma: İlk 2 mesaj (analiz çekirdeği) korunur, son 14 mesaj tutulur
 - Oturum başına maksimum 15 takip sorusu
 
@@ -119,7 +125,12 @@ Uygulama şu bilgileri sunar:
 
 ## 🏗️ Proje Bağlamı
 
-Bu proje, [YGA](https://yga.org.tr/) ve [UP School](https://upschool.com/) tarafından Citi Foundation desteğiyle yürütülen **Future Talent Program** (201 modülü) kapsamında geliştirilmiştir. Program AI, Büyük Veri, Otomasyon ve GreenTech alanlarında uzmanlaşmayı hedeflemektedir.
+Bu proje, [YGA](https://yga.org.tr/) ve [UP School](https://upschool.com/) tarafından Citi Foundation desteğiyle yürütülen **Future Talent Program** (201 modülü) kapsamında geliştirilmiştir. Program; AI, Büyük Veri, Otomasyon ve GreenTech alanlarında uzmanlaşmayı hedeflemektedir.
+
+**Eğitmenler ve katkıda bulunanlar:**
+- Yağmur Yıldız Parıltı — Yapay Zeka ile Uygulama Geliştirme
+- Hakan Şençiçek & Mehmet Özalp (Schneider Electric) — Otomasyon, Robotik ve PLC
+- Cihan Özel & Şahin Çağlayan (Faraday) — GreenTech
 
 ## 📝 Lisans
 
@@ -130,4 +141,4 @@ Bu proje eğitim amaçlı geliştirilmiştir.
 **Abdullah Sait Avcı**
 - 🎓 Sakarya Üniversitesi — Bilgisayar Mühendisliği (3. sınıf)
 - 🔗 [GitHub](https://github.com/AbdullahSaitAvci)
-- 🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-sait-avci/)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/abdullah-sait-avci)
