@@ -4,9 +4,9 @@ An AI-powered web application that analyzes factory operational data to calculat
 
 **Built with:** Python · Streamlit · Claude API (Anthropic)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-karbon-izi-danismani.streamlit.app)
 
-> 🔗 **Live Demo:** [abdullahsaitavci-karbon-izi-danismani.streamlit.app](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+> 🔗 **Live Demo:** [ai-karbon-izi-danismani.streamlit.app](https://ai-karbon-izi-danismani.streamlit.app)
 
 ---
 
@@ -82,7 +82,7 @@ streamlit run app.py
 
 Fabrika ve tesis operasyonel verilerini analiz ederek karbon ayak izini hesaplayan ve endüstriyel otomasyon (PLC, IoT, SCADA) tabanlı enerji verimliliği tavsiyeleri sunan yapay zeka destekli web uygulaması.
 
-> 🔗 **Canlı Demo:** [abdullahsaitavci-karbon-izi-danismani.streamlit.app](https://abdullahsaitavci-karbon-izi-danismani.streamlit.app)
+> 🔗 **Canlı Demo:** [ai-karbon-izi-danismani.streamlit.app](https://ai-karbon-izi-danismani.streamlit.app)
 
 ## 🎯 Ne Yapıyor?
 
